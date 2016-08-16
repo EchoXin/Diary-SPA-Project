@@ -37,10 +37,11 @@ diary: ／diarys, /diarys/:id
 
 ## 3rd Party APIs (optional)
 
-I will try to use the weather and location api.
+weather and location api.
 
 ## Wireframes
 
 User Navbar; Diary Navbar; New Diary Form
-![alt tag](http://i.imgur.com/Pvsvzhz.jpg)
+
 ![alt tag](http://i.imgur.com/i74332s.jpg)
+![alt tag](http://i.imgur.com/Pvsvzhz.jpg)

@@ -6,15 +6,15 @@ This app will provide a platform for user to write diary online. It’s convenie
 
 ##  User stories
 
-As a user, I want to sign-in, sign-up, sign-out.
-As a user, I want to create new diary.
-As a user, I want to edit old diary(update and delete).
+#As a user, I want to sign-in, sign-up, sign-out.
+#As a user, I want to create new diary.
+#As a user, I want to edit old diary(update and delete).
 
 ...
 
 optional:
-As a user, I want to upload photos in the diary.
-As a user, I want to retrieve the weather and location information.
+#As a user, I want to upload photos in the diary.
+#As a user, I want to retrieve the weather and location information.
 
 
 ## API Part

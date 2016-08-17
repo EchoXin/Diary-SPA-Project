@@ -12,12 +12,12 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button> -->
+                </button>
                 <a href='#mydiary' class="navbar-brand">Echo Diary</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,7 +30,7 @@
                         <a href='#' data-toggle="modal" data-target='#sign-up'>Sign up</a>
                     </li>
                     <li>
-                        <a  href='#' data-toggle="modal" data-target='#sign-out'>Sign out</a>
+                        <a href='#' id='sign-out'>Sign out</a>
                     </li>
                 </ul>
             </div>
@@ -81,8 +81,8 @@
     <header class="header-image">
         <div class="headline">
             <div class="container">
-                <h1>One Page Wonder</h1>
-                <h2>Will Knock Your Socks Off</h2>
+                <h1>Echo Diary</h1>
+                <h2>Record Your Life From Here</h2>
             </div>
         </div>
     </header>
@@ -94,7 +94,25 @@
                 </div>
             </div>
         </footer>
+        <div class="diary-form">
+        <form class="form">
 
+        <p class="title">
+            <input type="text" name="title" id="title" />
+            <label for="name">Title</label>
+        </p>
+
+
+        <p class="text">
+            <textarea name="text"></textarea>
+        </p>
+
+        <p class="submit">
+            <input type="submit" value="Send" />
+        </p>
+
+    </form>
+    </div>
 
 
 

@@ -18,12 +18,14 @@ const failure = (error) => {
 const signOutSuccess = () => {
   delete app.user;
   console.log(app);
+  console.log('success');
 };
+
 
 
 module.exports = {
   failure,
   success,
   signInSuccess,
-  signOutSuccess
+  signOutSuccess,
 };

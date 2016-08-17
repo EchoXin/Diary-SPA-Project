@@ -16,6 +16,7 @@ const signIn = (data) => {
     method: 'POST',
     data, //data: data,
   });
+  console.log(data);
 };
 
   const signOut = () => $.ajax({
@@ -25,8 +26,6 @@ const signIn = (data) => {
         Authorization: 'Token token=' + app.user.token,
       },
     });
-
-
 
 module.exports = {
   signUp,

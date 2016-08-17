@@ -4,7 +4,7 @@
 
 This app will provide a platform for user to write diary online. It’s convenient for people to write diary by typing instead of handwriting. The app can also keep user's privacy because users need to log in by password to see their own diaries.
 
-##  User stories
+## User stories
 
 As a user, I want to sign-in, sign-up, sign-out.
 
@@ -19,7 +19,6 @@ optional:
 As a user, I want to upload photos in the diary.
 
 As a user, I want to retrieve the weather and location information.
-
 
 ## Database
 

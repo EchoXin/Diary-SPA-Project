@@ -5,6 +5,8 @@ const app = require('../app');
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app);
+  $('.diary').removeClass('hide');
+  $('.header-image').addClass('hide');
 };
 
 const success = (data) => {
@@ -28,4 +30,5 @@ module.exports = {
   success,
   signInSuccess,
   signOutSuccess,
+  app,
 };

@@ -1,16 +1,21 @@
 'use strict';
 
 const app = require('../app');
+const authApi = require('../auth/ui.js');
 
 const create = (data) => {
+  console.log(authApi.app.user.token);
+  console.log(data);
   return $.ajax({
     url: app.api + '/diaries',
     method: 'POST',
     headers: {
-      Authorization: 'Token token=' + app.user.token,
+      Authorization: 'Token token=' + authApi.app.user.token,
     },
-    data,
-  });
+    data: {
+      diary: data
+    }
+   });
 };
 //
 // const index = () => {
@@ -33,8 +38,6 @@ const create = (data) => {
 //     });
 //   };
 //
-// module.exports = {
-//   signUp,
-//   signIn,
-//   signOut,
-// };
+module.exports = {
+  create,
+};

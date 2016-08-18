@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+
+
       <title>EchoDiary</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
+    <body>
       <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -30,7 +39,11 @@
                         <a href='#' data-toggle="modal" data-target='#sign-up'>Sign up</a>
                     </li>
                     <li>
+                      <a href='#' id='my-diaries'>My diary</a>
+                    </li>
+                    <li>
                         <a href='#' id='sign-out'>Sign out</a>
+
                     </li>
                 </ul>
             </div>
@@ -86,6 +99,28 @@
             </div>
         </div>
     </header>
+
+    <div class="diary hide">
+
+    <form class="form diary-form">
+
+    <p class="title">
+        <input type="text" name="title" id="title" />
+        <label for="name">Title</label>
+    </p>
+
+
+    <p class="text">
+        <input type="text" class="textarea" name="content" />
+    </p>
+
+    <p class="submit">
+        <input type="submit" id="new-diary-submit" value="Send" />
+    </p>
+
+</form>
+
+</div>
         <!-- Footer -->
         <footer>
             <div class="row">
@@ -94,25 +129,7 @@
                 </div>
             </div>
         </footer>
-        <div class="diary-form">
-        <form class="form">
 
-        <p class="title">
-            <input type="text" name="title" id="title" />
-            <label for="name">Title</label>
-        </p>
-
-
-        <p class="text">
-            <textarea name="text"></textarea>
-        </p>
-
-        <p class="submit">
-            <input type="submit" value="Send" />
-        </p>
-
-    </form>
-    </div>
 
 
 

@@ -7,7 +7,9 @@ const ui = require('./ui');
 //
 
 const onCreate = function (event) {
+  console.log('hi');
   let data = getFormFields(this);
+  console.log(data);
   event.preventDefault();
   api.create(data)
     .done(ui.success)
@@ -44,12 +46,12 @@ const onCreate = function (event) {
 //         .fail(ui.failure);
 // };
 //
-// const addHandlers = () => {
-//     $('.sign-up-form').on('submit', onSignUp);
-//     $('.sign-in-form').on('submit', onSignIn);
-//     $('#sign-out').on('click', OnSignOut);
-// };
+const addHandlers = () => {
+    // $('.sign-up-form').on('submit', onSignUp);
+    // $('.sign-in-form').on('submit', onSignIn);
+    $('.diary-form').on('submit', onCreate);
+};
 //
-// module.exports = {
-//     addHandlers,
-// };
+module.exports = {
+    addHandlers,
+};

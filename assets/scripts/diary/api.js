@@ -3,6 +3,7 @@
 const app = require('../app');
 const authApi = require('../auth/ui.js');
 
+
 const create = (data) => {
   console.log(authApi.app.user.token);
   console.log(data);
@@ -15,18 +16,29 @@ const create = (data) => {
     data: {
       diary: data
     }
-   });
+  });
 };
 //
-// const index = () => {
-//   return $.ajax({
-//     url: app.api + '/diaries',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     },
-//   });
-// };
+
+let displayDiaries = function (data) {
+  let allDiary = require('../templates/all-diary.handlebars');
+  $('#all-diary').html(allDiary({
+    diaries: data.diaries
+
+  }));
+  console.log(data.diaries);
+};
+
+let getAllDiary = function () {
+  return $.ajax({
+    url: "http://localhost:3000/diaries",
+    // method: 'GET',
+    // dataType: 'json'
+  }).done(function (diaries) {
+    console.log(diaries);
+    displayDiaries(diaries);
+  });
+};
 //
 //   const show = () => {
 //     return $.ajax({
@@ -40,4 +52,5 @@ const create = (data) => {
 //
 module.exports = {
   create,
+  getAllDiary,
 };

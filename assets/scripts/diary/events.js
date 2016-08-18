@@ -18,6 +18,9 @@ const onCreate = function (event) {
 };
 
 
+
+
+
 // const onSignUp = function(event) {
 //     let data = getFormFields(event.target);
 //     event.preventDefault();
@@ -50,6 +53,12 @@ const addHandlers = () => {
     // $('.sign-up-form').on('submit', onSignUp);
     // $('.sign-in-form').on('submit', onSignIn);
     $('.diary-form').on('submit', onCreate);
+    $('#my-diaries').on('click', api.getAllDiary)
+    $('#new-diary').on('click', function(){
+      $('.diary').removeClass('hide');
+      $('.header-image').addClass('hide');
+    })
+
 };
 //
 module.exports = {

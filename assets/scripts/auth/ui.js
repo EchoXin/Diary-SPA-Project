@@ -4,9 +4,11 @@ const app = require('../app');
 
 const signInSuccess = (data) => {
   app.user = data.user;
-  console.log(app);
-  $('.diary').removeClass('hide');
-  $('.header-image').addClass('hide');
+  console.log(app.user.email);
+  $('#welcome').html(app.user.email);
+  $('.after-sign-in').removeClass('hide');
+  $('.before-sign-in').addClass('hide');
+
 };
 
 const success = (data) => {
@@ -21,6 +23,11 @@ const signOutSuccess = () => {
   delete app.user;
   console.log(app);
   console.log('success');
+  $('#welcome').html("Echo Diary");
+  $('.header-image').removeClass('hide');
+  $('.after-sign-in').addClass('hide');
+  $('.before-sign-in').removeClass('hide');
+
 };
 
 

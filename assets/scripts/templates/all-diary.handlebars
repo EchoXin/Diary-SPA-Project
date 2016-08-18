@@ -1,0 +1,15 @@
+{{#each diaries}}
+
+
+
+
+  <h1> <small>Title: {{title}}</small></h1>
+  <div>
+    {{#if content}}
+      {{content}}
+    {{else}}
+      No content.
+    {{/if}}
+  </div>
+
+{{/each}}

@@ -9,6 +9,7 @@
 //
 const success = (data) => {
   console.log(data);
+  $('.diary').addClass('hide');
 };
 
 const failure = (error) => {

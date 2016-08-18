@@ -55,8 +55,10 @@ const addHandlers = () => {
     $('.diary-form').on('submit', onCreate);
     $('#my-diaries').on('click', api.getAllDiary)
     $('#new-diary').on('click', function(){
+
       $('.diary').removeClass('hide');
       $('.header-image').addClass('hide');
+      $('#all-diary').empty()
     })
 
 };

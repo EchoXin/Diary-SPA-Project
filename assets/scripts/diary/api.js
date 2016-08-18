@@ -22,6 +22,7 @@ const create = (data) => {
 
 let displayDiaries = function (data) {
   let allDiary = require('../templates/all-diary.handlebars');
+  $('.diary').addClass('hide');
   $('#all-diary').html(allDiary({
     diaries: data.diaries
 

@@ -24,7 +24,6 @@ const signOutSuccess = () => {
   console.log(app);
   console.log('success');
   $('#welcome').html("Echo Diary");
-  $('.header-image').removeClass('hide');
   $('.after-sign-in').addClass('hide');
   $('.before-sign-in').removeClass('hide');
 

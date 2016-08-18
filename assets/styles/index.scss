@@ -12,6 +12,7 @@ body {
     margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+
 .header-image {
     display: block;
     width: 100%;
@@ -39,25 +40,7 @@ body {
     background: rgba(255,255,255,0.9);
 }
 
-.featurette-divider {
-    margin: 80px 0;
-}
 
-.featurette {
-    overflow: hidden;
-}
-
-.featurette-image.pull-left {
-    margin-right: 40px;
-}
-
-.featurette-image.pull-right {
-    margin-left: 40px;
-}
-
-.featurette-heading {
-    font-size: 50px;
-}
 
 footer {
     margin: 50px 0;
@@ -72,21 +55,7 @@ footer {
         font-size: 63px;
     }
 
-    .featurette-divider {
-        margin: 50px 0;
-    }
 
-    .featurette-image.pull-left {
-        margin-right: 20px;
-    }
-
-    .featurette-image.pull-right {
-        margin-left: 20px;
-    }
-
-    .featurette-heading {
-        font-size: 35px;
-    }
 }
 
 @media(max-width:991px) {
@@ -98,25 +67,7 @@ footer {
         font-size: 50px;
     }
 
-    .featurette-divider {
-        margin: 40px 0;
-    }
 
-    .featurette-image {
-        max-width: 50%;
-    }
-
-    .featurette-image.pull-left {
-        margin-right: 10px;
-    }
-
-    .featurette-image.pull-right {
-        margin-left: 10px;
-    }
-
-    .featurette-heading {
-        font-size: 30px;
-    }
 }
 
 @media(max-width:768px) {
@@ -124,13 +75,7 @@ footer {
         margin: 0 15px;
     }
 
-    .featurette-divider {
-        margin: 40px 0;
-    }
 
-    .featurette-heading {
-        font-size: 25px;
-    }
 }
 
 @media(max-width:668px) {
@@ -142,9 +87,7 @@ footer {
         font-size: 32px;
     }
 
-    .featurette-divider {
-        margin: 30px 0;
-    }
+
 }
 
 @media(max-width:640px) {
@@ -161,25 +104,7 @@ footer {
     }
 }
 
-@media(max-width:375px) {
-    .featurette-divider {
-        margin: 10px 0;
-    }
 
-    .featurette-image {
-        max-width: 100%;
-    }
-
-    .featurette-image.pull-left {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .featurette-image.pull-right {
-        margin-bottom: 10px;
-        margin-left: 0;
-    }
-}
 .hide{
   display: none;
 }

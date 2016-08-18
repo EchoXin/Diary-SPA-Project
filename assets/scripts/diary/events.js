@@ -52,13 +52,12 @@ const onCreate = function (event) {
 const addHandlers = () => {
     // $('.sign-up-form').on('submit', onSignUp);
     // $('.sign-in-form').on('submit', onSignIn);
-    $('.diary-form').on('submit', onCreate);
-    $('#my-diaries').on('click', api.getAllDiary)
+    $('.new-diary-form').on('submit', onCreate);
+    $('#my-diary').on('click', api.getAllDiary)
     $('#new-diary').on('click', function(){
 
-      $('.diary').removeClass('hide');
-      $('.header-image').addClass('hide');
-      $('#all-diary').empty()
+      $('.new-diary').removeClass('hide');
+      $('.my-diary').empty();
     })
 
 };

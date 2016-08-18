@@ -21,12 +21,16 @@ const create = (data) => {
 //
 
 let displayDiaries = function (data) {
-  let allDiary = require('../templates/all-diary.handlebars');
-  $('.diary').addClass('hide');
-  $('#all-diary').html(allDiary({
-    diaries: data.diaries
+  $('.my-diary').removeClass('hide');
+  let useId = data.diaries.user_id
+  $('.new-diary').addClass('hide');
+  $('.my-diary').empty();
+  for (let i = 0; i < data.diaries.length; i++) {
+    if(data.diaries[i].user_id == app.user.id)
+    $('.my-diary').append("<p>" + data.diaries[i].title + "</p>")
+  }
 
-  }));
+
   console.log(data.diaries);
 };
 

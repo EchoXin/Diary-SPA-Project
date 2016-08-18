@@ -27,7 +27,7 @@ let displayDiaries = function (data) {
   $('.my-diary').empty();
   for (let i = 0; i < data.diaries.length; i++) {
     if(data.diaries[i].user_id == app.user.id)
-    $('.my-diary').append("<p>" + data.diaries[i].title + "</p>")
+    $('.my-diary').append("<a href='#' class='single-diary list-group-item'>" + data.diaries[i].title + "</a>")
   }
 
 

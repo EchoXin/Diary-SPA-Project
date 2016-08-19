@@ -42,7 +42,12 @@ let displayDiary = function () {
      if(diaryArray[i].id == diaryId){
        console.log(diaryArray[i].id);
        console.log(diaryArray[i].title);
-       $('.my-diary').html(`<div class='diary-body'><h1 class="diary-title">${diaryArray[i].title}</h1><p class="diary-content">${diaryArray[i].content}</p></div>`)
+       $('.my-diary').html(`<div class='diary-body'>
+       <h1
+       class="diary-title">${diaryArray[i].title}</h1>
+       <p class="diary-content">${diaryArray[i].content}</p>
+       <a href='#' class="edit">edit</a>
+       <a href='#' class="delete">delete</a></div>`)
      }
    }
  });

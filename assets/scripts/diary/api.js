@@ -2,7 +2,7 @@
 
 const app = require('../app');
 const authApi = require('../auth/ui.js');
-
+let diaryArray = [];
 
 const create = (data) => {
   console.log(authApi.app.user.token);
@@ -24,11 +24,12 @@ let displayDiaries = function (data) {
   $('.my-diary').removeClass('hide');
   $('.new-diary').addClass('hide');
   $('.my-diary').empty();
-  for (let i = 0; i < data.diaries.length; i++) {
-    if(data.diaries[i].user_id == app.user.id)
-    $('.my-diary').append(`<a href='#' data-id='${data.diaries[i].id}' class='single-diary list-group-item'>${data.diaries[i].title}</a>`)
+  console.log(data);
+  for (let i = 0; i < data.length; i++) {
+
+    $('.my-diary').append(`<a href='#' data-id='${data[i].id}' class='single-diary list-group-item'>${data[i].title}</a>`)
   }
-  console.log(data.diaries);
+  console.log(data);
  $('.single-diary').on('click', function(){
    let diaryId = $(this).data('id');
    for (let i = 0; i < data.diaries.length; i++) {
@@ -42,15 +43,16 @@ let displayDiaries = function (data) {
 
 let getAllDiary = function () {
   return $.ajax({
-    url: "http://localhost:3000/diaries",
+    url: "http://localhost:3000/users/" + authApi.app.user.id,
     method: 'GET',
     headers: {
-      Authorization: 'Token token=' + app.user.token,
+      Authorization: 'Token token=' + authApi.app.user.token,
     }
     // dataType: 'json'
   }).done(function (diaries) {
-    console.log(diaries);
-    displayDiaries(diaries);
+    console.log(diaries.user.diaries);
+    diaryArray = diaries.user.diaries;
+    displayDiaries(diaryArray);
   });
 };
 //

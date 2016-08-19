@@ -82,7 +82,7 @@ const addHandlers = () => {
       $('.edit-diary').removeClass('hide');
     });
 
-    $('#delete-diary').on('click', onDelete);
+    $('#delete-diary-submit').on('click', onDelete);
 
 };
 //

@@ -29,12 +29,17 @@ let displayDiaries = function (data) {
 
     $('.my-diary').append(`<a href='#' data-id='${data[i].id}' class='single-diary list-group-item'>${data[i].title}</a>`)
   }
-  console.log(data);
+  console.log($('.my-diary > a').data('id'));
+}
+
+let displayDiary = function () {
+ console.log(diaryArray);
  $('.single-diary').on('click', function(){
    let diaryId = $(this).data('id');
-   for (let i = 0; i < data.diaries.length; i++) {
-     if(data.diaries[i].id = diaryId){
-       $('.my-diary').html(`<div class='diary-body'><h1 class="diary-title">${data.diaries[i].title}</h1><p class="diary-content">${data.diaries[i].content}</p></div>`)
+   console.log(diaryId);
+   for (let i = 0; i < diaryArray.length; i++) {
+     if(diaryArray[i].id = diaryId){
+       $('.my-diary').html(`<div class='diary-body'><h1 class="diary-title">${diaryArray[i].title}</h1><p class="diary-content">${diaryArray[i].content}</p></div>`)
      }
    }
  });
@@ -53,6 +58,7 @@ let getAllDiary = function () {
     console.log(diaries.user.diaries);
     diaryArray = diaries.user.diaries;
     displayDiaries(diaryArray);
+    displayDiary(diaryArray);
   });
 };
 //

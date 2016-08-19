@@ -26,6 +26,7 @@ const signOutSuccess = () => {
   $('#welcome').html("Echo Diary");
   $('.after-sign-in').addClass('hide');
   $('.before-sign-in').removeClass('hide');
+  $('.my-diary').empty();
 
 };
 

@@ -115,3 +115,28 @@ footer {
 .single-diary{
   margin:50px;
 }
+
+.diary-content{
+  color: #4c4a37;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+
+}
+
+  .diary-title {
+    color: #7c795d;
+    font-family: 'Trocchi', serif;
+    font-size: 45px;
+    font-weight: normal;
+    line-height: 48px;
+  }
+  .diary-body{
+    margin:0 auto;
+    background:url('http://cdn.pcwallart.com/images/pale-yellow-color-wallpaper-1.jpg');
+    text-align: center;
+    background-position: center;
+    background-size:cover;
+    height: 80vh;
+    width: 60%;
+  }

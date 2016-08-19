@@ -22,22 +22,31 @@ const create = (data) => {
 
 let displayDiaries = function (data) {
   $('.my-diary').removeClass('hide');
-  let useId = data.diaries.user_id
   $('.new-diary').addClass('hide');
   $('.my-diary').empty();
   for (let i = 0; i < data.diaries.length; i++) {
     if(data.diaries[i].user_id == app.user.id)
-    $('.my-diary').append("<a href='#' class='single-diary list-group-item'>" + data.diaries[i].title + "</a>")
+    $('.my-diary').append(`<a href='#' data-id='${data.diaries[i].id}' class='single-diary list-group-item'>${data.diaries[i].title}</a>`)
   }
-
-
   console.log(data.diaries);
+ $('.single-diary').on('click', function(){
+   let diaryId = $(this).data('id');
+   for (let i = 0; i < data.diaries.length; i++) {
+     if(data.diaries[i].id = diaryId){
+       $('.my-diary').html(`<div class='diary-body'><h1 class="diary-title">${data.diaries[i].title}</h1><p class="diary-content">${data.diaries[i].content}</p></div>`)
+     }
+   }
+ });
+
 };
 
 let getAllDiary = function () {
   return $.ajax({
     url: "http://localhost:3000/diaries",
-    // method: 'GET',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    }
     // dataType: 'json'
   }).done(function (diaries) {
     console.log(diaries);

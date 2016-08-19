@@ -3,6 +3,7 @@
 const app = require('../app');
 const authApi = require('../auth/ui.js');
 let diaryArray = [];
+let diaryId;
 
 const create = (data) => {
   console.log(authApi.app.user.token);
@@ -20,6 +21,33 @@ const create = (data) => {
 };
 //
 
+const update = (data) => {
+  console.log(data);
+  console.log(diaryId);
+  return $.ajax({
+    url: app.api + '/diaries/' + diaryId ,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + authApi.app.user.token,
+    },
+    data: {
+      diary: data
+    }
+  });
+};
+
+const destroy = () => {
+
+  return $.ajax({
+    url: app.api + '/diaries/' + diaryId ,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + authApi.app.user.token,
+    }
+  });
+};
+
+
 let displayDiaries = function (data) {
   $('.my-diary').removeClass('hide');
   $('.new-diary').addClass('hide');
@@ -35,7 +63,7 @@ let displayDiaries = function (data) {
 let displayDiary = function () {
  console.log(diaryArray);
  $('.single-diary').on('click', function(){
-   let diaryId = $(this).data('id');
+   diaryId = $(this).data('id');
    console.log(diaryId);
    for (let i = 0; i < diaryArray.length; i++) {
 
@@ -71,17 +99,11 @@ let getAllDiary = function () {
   });
 };
 //
-  const updateDiary = () => {
-    return $.ajax({
-      url: app.api + '/diaries/' + app.diary.id,
-      method: 'GET',
-      headers: {
-        Authorization: 'Token token=' + app.user.token,
-      },
-    });
-  };
+
 //
 module.exports = {
   create,
   getAllDiary,
+  update,
+  destroy
 };

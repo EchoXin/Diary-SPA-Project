@@ -17,6 +17,23 @@ const onCreate = function (event) {
     console.log(data);
 };
 
+const onUpdate = function (event) {
+  console.log('update');
+  let data = getFormFields(this);
+  console.log(data);
+  event.preventDefault();
+  api.update(data)
+    .done(ui.success)
+    .fail(ui.onError);
+    console.log(data);
+};
+
+const onDelete = function() {
+  event.preventDefault();
+  api.destroy()
+    .done(ui.success)
+    .fail(ui.onError);
+};
 
 
 
@@ -53,12 +70,19 @@ const addHandlers = () => {
     // $('.sign-up-form').on('submit', onSignUp);
     // $('.sign-in-form').on('submit', onSignIn);
     $('.new-diary-form').on('submit', onCreate);
-    $('#my-diary').on('click', api.getAllDiary)
+    $('#my-diary').on('click', api.getAllDiary);
     $('#new-diary').on('click', function(){
 
       $('.new-diary').removeClass('hide');
       $('.my-diary').empty();
     })
+    $('.edit-diary-form').on('submit', onUpdate);
+    $('#edit-diary').on('click', function(){
+      console.log("show");
+      $('.edit-diary').removeClass('hide');
+    });
+
+    $('#delete-diary').on('click', onDelete);
 
 };
 //

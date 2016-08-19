@@ -46,10 +46,11 @@ let displayDiary = function () {
        <h1
        class="diary-title">${diaryArray[i].title}</h1>
        <p class="diary-content">${diaryArray[i].content}</p>
-       <a href='#' class="edit">edit</a>
-       <a href='#' class="delete">delete</a></div>`)
+       </div>`)
      }
    }
+   $('.edit').removeClass('hide');
+   $('.delete').removeClass('hide');
  });
 
 };

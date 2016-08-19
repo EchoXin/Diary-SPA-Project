@@ -84,6 +84,7 @@ let displayDiary = function () {
 };
 
 let getAllDiary = function () {
+  $('.after-show-diary').addClass('hide');
   return $.ajax({
     url: app.api + "/users/" + authApi.app.user.id,
     method: 'GET',
@@ -97,6 +98,7 @@ let getAllDiary = function () {
     displayDiaries(diaryArray);
     displayDiary(diaryArray);
   });
+
 };
 //
 

@@ -72,7 +72,7 @@ const addHandlers = () => {
     $('.new-diary-form').on('submit', onCreate);
     $('#my-diary').on('click', api.getAllDiary);
     $('#new-diary').on('click', function(){
-
+      $('.after-show-diary').addClass('hide');
       $('.new-diary').removeClass('hide');
       $('.my-diary').empty();
     })
@@ -80,6 +80,7 @@ const addHandlers = () => {
     $('#edit-diary').on('click', function(){
       console.log("show");
       $('.edit-diary').removeClass('hide');
+      $('.my-diary').empty();
     });
 
     $('#delete-diary-submit').on('click', onDelete);

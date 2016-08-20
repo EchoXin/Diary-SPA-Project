@@ -2,7 +2,10 @@
 
 const app = require('../app');
 const authApi = require('../auth/ui.js');
+const ui = require('./ui');
+
 let diaryArray = [];
+let diaryEdit = {};
 let diaryId;
 
 const create = (data) => {
@@ -35,6 +38,25 @@ const update = (data) => {
       diary: data
     }
   });
+};
+
+
+
+
+const onUpdate = function (event) {
+  let data = getFormFields(this);
+  console.log(data);
+  event.preventDefault();
+  update(data)
+    .done(ui.success)
+    .fail(ui.onError);
+  $('.my-diary').html(`<div class='diary-body'>
+  <h1
+  class="diary-title">${data.title}</h1>
+  <p class="diary-content">${data.content}</p>
+  </div>`)
+  $('.edit-diary').empty();
+
 };
 
 const destroy = () => {
@@ -72,16 +94,14 @@ let displayDiary = function () {
        class="diary-title">${diaryArray[i].title}</h1>
        <p class="diary-content">${diaryArray[i].content}</p>
        </div>`)
-       $('#edit-title').attr("value",diaryArray[i].title);
-       console.log($('#edit-title').attr("value"));
-       $('#edit-content').empty();
-       $('#edit-content').html(diaryArray[i].content);
-       console.log($('#edit-content').html());
+       diaryEdit = diaryArray[i];
+       console.log(diaryEdit.title);
+
      }
    }
-   $('.edit').removeClass('hide');
-   $('.delete').removeClass('hide');
+   $('.after-show-diary').removeClass('hide');
  });
+ console.log(diaryEdit);
 
 };
 
@@ -105,10 +125,35 @@ let getAllDiary = function () {
 };
 //
 
+
+const editDiary = function(){
+  console.log(diaryEdit);
+
+  $('.edit-diary').html(`<form class='form edit-diary-form'>
+  <p class='title'>
+      <input type='text' name='title' id='edit-title' value=${diaryEdit.title} />
+  </p>
+  <p class='text'>
+      <textarea type='text' class='textarea' name='content' id='edit-content'>${diaryEdit.content}</textarea>
+  </p>
+  <p class='submit'>
+      <input type='submit' value='Submit'/>
+  </p>
+  </form>`);
+  console.log(diaryEdit);
+  $('.my-diary').empty();
+  $('.edit-diary-form').on('submit', onUpdate);
+
+};
+
+
+
 //
 module.exports = {
   create,
   getAllDiary,
   update,
-  destroy
+  destroy,
+  editDiary,
+  onUpdate,
 };

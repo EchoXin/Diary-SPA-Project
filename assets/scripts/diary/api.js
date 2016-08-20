@@ -24,6 +24,7 @@ const create = (data) => {
 const update = (data) => {
   console.log(data);
   console.log(diaryId);
+
   return $.ajax({
     url: app.api + '/diaries/' + diaryId ,
     method: 'PATCH',
@@ -50,18 +51,14 @@ const destroy = () => {
 
 let displayDiaries = function (data) {
   $('.my-diary').removeClass('hide');
-  $('.new-diary').addClass('hide');
   $('.my-diary').empty();
-  console.log(data);
   for (let i = 0; i < data.length; i++) {
 
     $('.my-diary').append(`<a href='#' data-id='${data[i].id}' class='single-diary list-group-item'>${data[i].title}</a>`)
   }
-  console.log($('.my-diary > a').data('id'));
 }
 
 let displayDiary = function () {
- console.log(diaryArray);
  $('.single-diary').on('click', function(){
    diaryId = $(this).data('id');
    console.log(diaryId);
@@ -75,6 +72,11 @@ let displayDiary = function () {
        class="diary-title">${diaryArray[i].title}</h1>
        <p class="diary-content">${diaryArray[i].content}</p>
        </div>`)
+       $('#edit-title').attr("value",diaryArray[i].title);
+       console.log($('#edit-title').attr("value"));
+       $('#edit-content').empty();
+       $('#edit-content').html(diaryArray[i].content);
+       console.log($('#edit-content').html());
      }
    }
    $('.edit').removeClass('hide');
@@ -85,6 +87,8 @@ let displayDiary = function () {
 
 let getAllDiary = function () {
   $('.after-show-diary').addClass('hide');
+  $('.new-diary').empty();
+  $('.edit-diary').empty();
   return $.ajax({
     url: app.api + "/users/" + authApi.app.user.id,
     method: 'GET',
@@ -93,7 +97,6 @@ let getAllDiary = function () {
     }
     // dataType: 'json'
   }).done(function (diaries) {
-    console.log(diaries.user.diaries);
     diaryArray = diaries.user.diaries;
     displayDiaries(diaryArray);
     displayDiary(diaryArray);

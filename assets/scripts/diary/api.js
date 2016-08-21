@@ -75,9 +75,12 @@ let displayDiaries = function (data) {
   $('.my-diary').removeClass('hide');
   $('.my-diary').empty();
   for (let i = 0; i < data.length; i++) {
-
-    $('.my-diary').append(`<a href='#' data-id='${data[i].id}' class='single-diary list-group-item'>${data[i].title}</a>`)
+    let date = data[i].created_at.substr(0,10);
+    let time = data[i].created_at.substr(11,5);
+    $('.my-diary').append(`<a href='#' data-id='${data[i].id}' class='single-diary list-group-item'>${data[i].title}<span class="diary-date"> ${date} ${time}</span></a>`)
+    console.log(typeof data[i].created_at);
   }
+
 }
 
 let displayDiary = function () {

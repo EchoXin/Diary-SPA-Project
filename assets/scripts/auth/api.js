@@ -16,7 +16,6 @@ const signIn = (data) => {
     method: 'POST',
     data, //data: data,
   });
-  console.log(data);
 };
 
   const signOut = () => $.ajax({

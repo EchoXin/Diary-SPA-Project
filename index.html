@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href='#mydiary' class="navbar-brand">Echo Diary</a>
+                <a href='#home' class="navbar-brand" id='home-logo'>Echo Diary</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -69,6 +69,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
           <form class="sign-up-form">
+            <input type='text' name="credentials[email]" class='email' placeholder="Email">
             <input type='password' class='password' name="credentials[password]" placeholder="Password"><br>
             <input type='password' class='confirm-password' name="credentials[password_confirmation]" placeholder="Comfirm Password">
             <div class="modal-footer">
@@ -119,11 +120,11 @@
 
 
     <!-- Full Width Image Header -->
-    <header class="header-image before-sign-in">
+    <header class="header-image before-sign-in before-show-diary">
         <div class="headline">
             <div class="container">
-                <h1 id='welcome'>Echo Diary</h1>
-                <h2>Record Your Life From Here</h2>
+                <h1 id='welcome-user'>Echo Diary</h1>
+                <h2 id='welcome-sign'>Record your life from here</h2>
             </div>
         </div>
     </header>

@@ -3,14 +3,31 @@
 const app = require('../app');
 const authApi = require('../auth/ui.js');
 const ui = require('./ui');
+let weatherColumn = "";
 
 let diaryArray = [];
 let diaryEdit = {};
 let diaryId;
 
+const createWeather = function (){
+   return $.ajax({
+    url: app.weatherApi,
+    method: 'GET',
+    async: false
+  })
+  .done(function(data){
+    weatherColumn = data.list[1].weather[0].icon;
+    console.log(weatherColumn);
+  });
+
+};
+
+
 const create = (data) => {
-  console.log(authApi.app.user.token);
   console.log(data);
+  console.log(weatherColumn);
+  createWeather();
+  console.log(weatherColumn);
   return $.ajax({
     url: app.api + '/diaries',
     method: 'POST',
@@ -18,11 +35,14 @@ const create = (data) => {
       Authorization: 'Token token=' + authApi.app.user.token,
     },
     data: {
-      diary: data
+      diary: { 'title': `${data.title}`, 'content': `${data.content}`, 'weather': `${weatherColumn}` }
     }
   });
 };
 //
+
+
+
 
 const update = (data) => {
   console.log(data);
@@ -75,10 +95,11 @@ let displayDiaries = function (data) {
   $('.my-diary').removeClass('hide');
   $('.my-diary').empty();
   for (let i = 0; i < data.length; i++) {
+    let weather = data[i].weather;
     let date = data[i].created_at.substr(0,10);
     let time = data[i].created_at.substr(11,5);
-    $('.my-diary').append(`<a href='#' data-id='${data[i].id}' class='single-diary list-group-item'>${data[i].title}<span class="diary-date"> ${date} ${time}</span></a>`)
-    console.log(typeof data[i].created_at);
+
+    $('.my-diary').append(`<a href='#' data-id='${data[i].id}' class='single-diary list-group-item'><img src='http://openweathermap.org/img/w/${weather}.png'>${data[i].title}<span class="diary-date"> ${date} ${time}</span></a>`)
   }
 
 }
@@ -86,7 +107,6 @@ let displayDiaries = function (data) {
 let displayDiary = function () {
  $('.single-diary').on('click', function(){
    diaryId = $(this).data('id');
-   console.log(diaryId);
    for (let i = 0; i < diaryArray.length; i++) {
 
      if(diaryArray[i].id == diaryId){
@@ -109,7 +129,7 @@ let displayDiary = function () {
 };
 
 let getAllDiary = function () {
-  $('.after-show-diary').addClass('hide');
+  $('.after-show-diary, .before-show-diary').addClass('hide');
   $('.new-diary').empty();
   $('.edit-diary').empty();
   return $.ajax({

@@ -1,6 +1,5 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import 'usermodal.scss';
 @import 'diary-form.scss';
 /*
  * Start Bootstrap - One Page Wonder (http://startbootstrap.com/)
@@ -53,9 +52,7 @@ footer {
 
     .headline h2 {
         font-size: 63px;
-    }
-
-
+    }    
 }
 
 @media(max-width:991px) {
@@ -66,16 +63,12 @@ footer {
     .headline h2 {
         font-size: 50px;
     }
-
-
 }
 
 @media(max-width:768px) {
     .container {
         margin: 0 15px;
     }
-
-
 }
 
 @media(max-width:668px) {
@@ -86,8 +79,6 @@ footer {
     .headline h2 {
         font-size: 32px;
     }
-
-
 }
 
 @media(max-width:640px) {
@@ -122,7 +113,6 @@ footer {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
   line-height: 32px;
-
 }
 
   .diary-title {
@@ -147,3 +137,12 @@ footer {
     float:right;
     line-height: 50px;
   }
+
+.email, .password, .confirm-password{
+  margin:5px;
+  width: 60%;
+}
+
+.header-image{
+  font-family: 'Trocchi', serif;
+}

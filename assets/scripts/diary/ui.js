@@ -1,12 +1,5 @@
-// 'use strict';
-//
-// const app = require('../app');
-//
-// const signInSuccess = (data) => {
-//   app.user = data.user;
-//   console.log(app);
-// };
-//
+'use strict';
+
 const success = (data) => {
   console.log(data);
 };
@@ -14,17 +7,8 @@ const success = (data) => {
 const failure = (error) => {
   console.error(error);
 };
-//
-// const signOutSuccess = () => {
-//   delete app.user;
-//   console.log(app);
-// };
-//
-//
-//
+
 module.exports = {
   failure,
   success,
-  // signInSuccess,
-  // signOutSuccess,
 };

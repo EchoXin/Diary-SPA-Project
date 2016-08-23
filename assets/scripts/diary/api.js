@@ -67,7 +67,6 @@ const onUpdate = function (event) {
 };
 
 const destroy = function () {
-
   return $.ajax({
     url: app.api + '/diaries/' + diaryId,
     method: 'DELETE',
@@ -77,6 +76,7 @@ const destroy = function () {
   });
 };
 
+// show all diary
 let displayDiaries = function (data) {
   $('.my-diary').removeClass('hide');
   $('.my-diary').empty();
@@ -93,6 +93,7 @@ let displayDiaries = function (data) {
   }
 };
 
+// show single diary
 let displayDiary = function () {
 
   $('.single-diary').on('click', function () {
@@ -113,6 +114,7 @@ let displayDiary = function () {
   });
 };
 
+// get all dairy data
 let getAllDiary = function () {
   $('.after-show-diary, .before-show-diary').addClass('hide');
   $('.new-diary').empty();

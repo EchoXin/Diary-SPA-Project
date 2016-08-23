@@ -18,6 +18,17 @@ const signIn = function (data) {
   });
 };
 
+const changePassword = function (data) {
+  return $.ajax({
+    url: app.api + '/change-password/' + app.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
 const signOut = () => $.ajax({
   url: app.api + '/sign-out/' + app.user.id,
   method: 'DELETE',
@@ -30,4 +41,5 @@ module.exports = {
   signUp,
   signIn,
   signOut,
+  changePassword,
 };

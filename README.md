@@ -12,35 +12,15 @@ As a user, I want to create new diary.
 
 As a user, I want to edit old diary(update and delete).
 
-...
+## 3rd Party APIs
 
-optional:
+openweathermap api.
 
-As a user, I want to upload photos in the diary.
+## Technology skills
 
-As a user, I want to retrieve the weather and location information.
-
-## Database
-
-user table: username, password, diary
-
-diary table: text, photo, (weather), (location)
-
-user-diary: one to many
-
-## Routing
-
-user: /sign-in, /sign-up, /change-password,/sign-out
-
-diary: ／diarys, /diarys/:id
-
-## 3rd Party APIs (optional)
-
-weather and location api.
-
-## Wireframes
-
-User Navbar; Diary Navbar; New Diary Form
-
-![alt tag](http://i.imgur.com/i74332s.jpg)
-![alt tag](http://i.imgur.com/Pvsvzhz.jpg)
+  JavaScript
+  jQuery
+  AJAX
+  HTML
+  CSS
+  Bootstrap

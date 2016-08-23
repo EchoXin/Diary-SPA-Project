@@ -25,6 +25,15 @@ const onSignIn = function (event) {
   console.log(data);
 };
 
+const onChangePassword = (event) => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.changePassword(data)
+  .done(ui.success)
+  .fail(ui.failure);
+  $('#change-password').modal('hide');
+};
+
 const OnSignOut = function (event) {
   event.preventDefault();
   api.signOut()
@@ -35,7 +44,9 @@ const OnSignOut = function (event) {
 const addHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
+  $('.change-password-form').on('submit', onChangePassword);
   $('#sign-out').on('click', OnSignOut);
+
 };
 
 module.exports = {

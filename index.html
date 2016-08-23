@@ -2,14 +2,6 @@
 <html>
     <head>
 
-      <!-- <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="author" content=""> -->
-
-
-
       <title>EchoDiary</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
@@ -51,8 +43,10 @@
                       <a href='#' data-toggle="modal" data-target='#delete-diary'>Delete diary</a>
                     </li>
                     <li class = "after-sign-in hide">
+                        <a href='#' data-toggle="modal" data-target='#change-password'>Change password</a>
+                    </li>
+                    <li class = "after-sign-in hide">
                         <a href='#' id='sign-out'>Sign out</a>
-
                     </li>
                 </ul>
             </div>
@@ -88,19 +82,35 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <form class="sign-in-form">
-                <input type='text' name="credentials[email]" class='email' placeholder="Username">
+              <input type='text' name="credentials[email]" class='email' placeholder="Username">
               <input type='password' name="credentials[password]" class='password' placeholder="Password">
-            <div class="modal-footer">
-              <input type="submit" value="Sign in!" class="btn btn-default sign-in-submit">
-            </div>
+              <div class="modal-footer">
+                <input type="submit" value="Sign in!" class="btn btn-default sign-in-submit">
+              </div>
             </form>
           </div>
         </div>
       </div>
 
+      <!-- change password -->
+      <div class="modal fade" id="change-password" tabindex="-1" role="dialog" aria-labelledby="change-password" aria-hidden="true">
+        <div class="modal-dialog"  role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <form class="change-password-form">
+              <input type='password' name='passwords[old]' placeholder="Old Password"><br>
+              <input type='password' name='passwords[new]' placeholder="New Password"><br>
+            <div class="modal-footer">
+              <input type="submit" value="Change password!" class="btn btn-default change-password-submit">
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
 
       <!-- delete confirm -->
-
       <div class="modal fade" id="delete-diary" tabindex="-1" role="dialog" aria-labelledby="delete-diary" aria-hidden="true">
         <div class="modal-dialog"  role="document">
           <div class="modal-content">
@@ -129,16 +139,16 @@
         </div>
     </header>
 
+    <!-- show all diary -->
     <ul class="my-diary after-sign-in list-group">
-
     </ul>
 
+    <!-- create new diary  -->
     <div class='new-diary after-sign-in'>
-
     </div>
 
+    <!-- edit old diary -->
     <div class="edit-diary">
-
     </div>
 
 
@@ -150,10 +160,6 @@
                 </div>
             </div>
         </footer>
-
-
-
-
 
     </body>
 </html>

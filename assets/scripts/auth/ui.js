@@ -17,6 +17,7 @@ const success = (data) => {
   console.log(data);
 };
 
+
 const failure = (error) => {
   console.error(error);
 };
@@ -29,6 +30,7 @@ const signOutSuccess = () => {
   $('.after-sign-in, .after-show-diary').addClass('hide');
   $('.before-sign-in').removeClass('hide');
   $('.my-diary').empty();
+  $('.edit-diary').empty();
   $('#welcome-user').html('Echo Diary');
   $('#welcome-sign').html('Record your life from here');
 };

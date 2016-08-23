@@ -29,8 +29,9 @@ const onChangePassword = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.changePassword(data)
-  .done(ui.success)
-  .fail(ui.failure);
+      .done(ui.success)
+      .fail(ui.failure);
+  console.log(data);
   $('#change-password').modal('hide');
 };
 

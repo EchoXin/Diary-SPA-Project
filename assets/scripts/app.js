@@ -1,9 +1,9 @@
 'use strict';
 
 const app = {
-  // api: 'http://localhost:3000',
+  api: 'http://localhost:3000',
 
-  api: 'https://salty-mesa-93438.herokuapp.com',
+  // api: 'https://salty-mesa-93438.herokuapp.com',
   weatherApi: 'http://api.openweathermap.org/data/2.5/forecast/city?q=Boston&APPID=f1c0d3b7cb3bd30991614b391a2ddf52',
 };
 

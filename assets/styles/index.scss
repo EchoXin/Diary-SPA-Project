@@ -9,6 +9,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
     margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTHhifIejqgbHpi-2UAUJyXNN3Tasae5BZSBO62IKD7yZPiTRUD');
+    background-size: cover;
 }
 
 
@@ -16,7 +18,7 @@ body {
     display: block;
     width: 100%;
     text-align: center;
-    background: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTHhifIejqgbHpi-2UAUJyXNN3Tasae5BZSBO62IKD7yZPiTRUD') no-repeat center center scroll;
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -124,10 +126,6 @@ footer {
   }
   .diary-body{
     margin:0 auto;
-    background:url('http://cdn.pcwallart.com/images/pale-yellow-color-wallpaper-1.jpg');
-    text-align: center;
-    background-position: center;
-    background-size:cover;
     height: 80vh;
     width: 60%;
   }
@@ -135,6 +133,7 @@ footer {
 
   .diary-date{
     float:right;
+    line-height: 50px;
   }
 
 .email, .password, .confirm-password{

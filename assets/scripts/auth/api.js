@@ -19,7 +19,6 @@ const signIn = function (data) {
 };
 
 const changePassword = function (data) {
-  console.log('changePassword')
   return $.ajax({
     url: app.api + '/change-password/' + app.user.id,
     method: 'PATCH',

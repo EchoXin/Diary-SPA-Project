@@ -17,22 +17,13 @@ const success = (data) => {
   console.log(data);
 };
 
-
 const failure = (error) => {
   console.error(error);
 };
 
 const signOutSuccess = () => {
   delete app.user;
-  console.log(app);
   console.log('success');
-  $('#welcome').html('Echo Diary');
-  $('.after-sign-in, .after-show-diary').addClass('hide');
-  $('.before-sign-in').removeClass('hide');
-  $('.my-diary').empty();
-  $('.edit-diary').empty();
-  $('#welcome-user').html('Echo Diary');
-  $('#welcome-sign').html('Record your life from here');
 };
 
 module.exports = {

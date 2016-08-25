@@ -4,25 +4,11 @@ const app = require('../app');
 const authApi = require('../auth/ui.js');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
-
-let weatherColumn;
 let diaryArray = [];
 let diaryEdit = {};
 let diaryId;
 
-const createWeather = function () {
-  return $.ajax({
-    url: app.weatherApi,
-    method: 'GET',
-    async: false,
-  }).done(function (data) {
-      weatherColumn = data.list[1].weather[0].icon;
-    });
-};
-
-const create = (data) => {
-  createWeather();
-  console.log(weatherColumn);
+const create = function (data) {
   return $.ajax({
     url: app.api + '/diaries',
     method: 'POST',
@@ -31,9 +17,8 @@ const create = (data) => {
     },
     data: {
       diary: {
-        'title': `${data.title}`,
-        'content': `${data.content}`,
-        'weather': `${weatherColumn}`,
+        title: `${data.title}`,
+        content: `${data.content}`,
       },
     },
   });
@@ -86,7 +71,7 @@ let displayDiaries = function (data) {
     let time = data[i].created_at.substr(11, 5);
 
     $('.my-diary').append(`<a href='#' data-id='${data[i].id}' class='single-diary list-group-item'>
-    <img src='http://openweathermap.org/img/w/${weather}.png'>
+    <img src='https://openweathermap.org/img/w/${weather}.png'>
     ${data[i].title}
     <span class="diary-date"> ${date} ${time}</span>
     </a>`);

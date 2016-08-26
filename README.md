@@ -6,7 +6,7 @@ This app will provide a platform for user to write diary online. It’s convenie
 
 ## Back-end Link
 
-[API](https://salty-mesa-93438.herokuapp.com)
+[API](https://github.com/EchoXin/Diary-SPA-Project-API)
 
 
 ## User stories
